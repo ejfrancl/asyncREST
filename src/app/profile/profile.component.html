@@ -1,0 +1,13 @@
+First Time
+<p>{{ myresult1.val }}</p>
+Second time
+<p>{{ myresult2.val }}</p>
+Third time
+<div *ngIf="myresult3 ; else loading; let myresult3">
+<!-- <div *ngIf="myresult3.val ; else loading; let myresult3"> -->
+                {{ myresult3.val }}
+  </div>
+
+  <ng-template #loading>
+      Loading your things...
+    </ng-template>

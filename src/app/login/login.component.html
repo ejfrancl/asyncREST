@@ -1,0 +1,21 @@
+<h2>Please Enter Creds</h2>
+      <div>
+        <label>ID:
+          <input type="search"
+           class="form-control"
+           placeholder="Please Enter Your ID"
+           #id>
+        </label>
+        <label>PWD:
+          <input type="search"
+           class="form-control"
+           placeholder="Please Enter Your PWD"
+           #pwd>
+          </label>      </div>
+  <!-- <button (click)="login(id.value, pwd.value)">save</button>  -->
+  <button (click)="login(id.value, pwd.value)">Login</button> 
+    <div *ngIf="myresult4 ; else loading; let myresult">
+        {{ myresult.val }}
+      </div> 
+
+
