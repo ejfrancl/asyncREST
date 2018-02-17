@@ -22,6 +22,8 @@ export class LoginComponent implements OnInit {
   token:string = '';
 
   ngOnInit() {
+  //  var newWindow = window.open('some_url');
+   window.open("data:application/text;base64," + 'VGhlIGNvbnRlbnRzIG9mIGEgdGVzdCBmaWxlLg==');
   }
 
   processB(res: any) {

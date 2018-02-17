@@ -30,7 +30,7 @@ export class DataService {
     const headers = new HttpHeaders()
     .set('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
     //this.log(data);
-    this.http.post('https://www.deskflow-asp3.com/wk_api/main.php', 
+    this.http.post('https://dfe.wittkieffer.com/api/', 
     data, 
      {
       headers: headers,
@@ -58,9 +58,9 @@ export class DataService {
     var data = "function=get_user_settings&session=" + sessionStorage.getItem('currentSession') +
                   "&token=" + sessionStorage.getItem('currentToken');
     const headers = new HttpHeaders()
-    .set('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
+   .set('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
     //this.log(data);
-    this.http.post('https://www.deskflow-asp3.com/wk_api/main.php', 
+    this.http.post('https://dfe.wittkieffer.com/api/', 
     data, 
      {
       headers: headers,
@@ -69,7 +69,9 @@ export class DataService {
     )
     .pipe(
       tap(result => this.log(`get_user_settings() success:` + data)),
-      catchError(this.handleError('get_user_settings() error', []))
+     // catchError(this.handleError('get_user_settings() error', [])).apply
+      catchError(this.handleError('get_user_settings() error', [])),
+      delay(4000)
     )
     .subscribe(
       myres => {
@@ -91,7 +93,7 @@ export class DataService {
     const headers = new HttpHeaders()
     .set('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
     //this.log(data);
-    this.http.post('https://www.deskflow-asp3.com/wk_api/main.php', 
+    this.http.post('https://dfe.wittkieffer.com/api/', 
     data, 
      {
       headers: headers,
@@ -101,7 +103,7 @@ export class DataService {
     .pipe(
       tap(result => this.log(`get_user_data() success:` + data)),
       catchError(this.handleError('get_user_data() error', []))
-//      delay(4000)
+      //delay(4000)
     )
   .toPromise()
     .then(
@@ -134,7 +136,7 @@ login(id:string, pwd:string) {
   const headers = new HttpHeaders()
   .set('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
   this.log(id + pwd);
-  this.http.post('https://www.deskflow-asp3.com/wk_api/main.php', 
+  this.http.post('https://dfe.wittkieffer.com/api/', 
   data, 
    {
     headers: headers,
